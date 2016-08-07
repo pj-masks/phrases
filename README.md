@@ -1,6 +1,6 @@
-To run the application, use the command: gradle bootRun
+To run the service, use the command: gradle bootRun
 
-The uri for the application is: localhost:8080/phrase-matcher
+The uri for the service is: localhost:8080/phrase-matcher
 
 It accepts a JSON POST request and an example request body is:
 
