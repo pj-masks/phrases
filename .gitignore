@@ -54,3 +54,6 @@ Temporary Items
 *.prefs
 *.component
 *.xml
+*.class
+build/resources/main/application.properties
+build/resources/main/phrases
