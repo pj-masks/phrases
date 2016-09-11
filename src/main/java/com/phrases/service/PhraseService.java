@@ -46,11 +46,10 @@ public class PhraseService {
 	public Collection<String> findPhrases(String input) {
 		TreeMultimap<Integer, String> matchedPhraseMap = TreeMultimap.create();
 		if (!StringUtils.isEmpty(input)) {
-			for (String phrase : phraseRepository.getPhraseDictionary()) {
-				int matchedPosition = input.indexOf(phrase);
-				if (matchedPosition != -1) {
-					matchedPhraseMap.put(matchedPosition, phrase);
-				}
+			List<String> matchedPhrases = phraseRepository.getPhraseDictionary().parallelStream()
+					.filter(phrase -> input.contains(phrase)).collect(toList());
+			for (String matchedPhrase : matchedPhrases) {
+				matchedPhraseMap.put(input.indexOf(matchedPhrase), matchedPhrase);
 			}
 		}
 		return matchedPhraseMap.values();
