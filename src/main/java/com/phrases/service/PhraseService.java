@@ -1,6 +1,8 @@
 package com.phrases.service;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,7 +49,7 @@ public class PhraseService {
 		TreeMultimap<Integer, String> matchedPhraseMap = TreeMultimap.create();
 		if (!StringUtils.isEmpty(input)) {
 			List<String> matchedPhrases = phraseRepository.getPhraseDictionary().parallelStream()
-					.filter(phrase -> input.contains(phrase)).collect(toList());
+					.filter(phrase -> input.contains(phrase)).collect(Collectors.toList());
 			for (String matchedPhrase : matchedPhrases) {
 				matchedPhraseMap.put(input.indexOf(matchedPhrase), matchedPhrase);
 			}
