@@ -1,0 +1,31 @@
+{
+	"variables": [],
+	"info": {
+		"name": "phrases",
+		"_postman_id": "10ff1e86-eed6-93b3-414d-c6ce654f966e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "originalExample",
+			"request": {
+				"url": "localhost:3456/phrase-matcher",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n   \"input\":\"i have sore throat and headache\"\r\n}\r\n   \r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
